@@ -27,7 +27,7 @@ jobs:
       with:
         files: './src/main/resources/application-prod.yml' 
       env:
-        eureka.client.service-url.defaultZone: ${{secrets.VM_INSTANCE_HOST}}
+        eureka.client.service-url.defaultZone: ${{secrets.VM_EUREKA_DEFAULTZONE}}
 
     
     # Gradlew 실행 허용
