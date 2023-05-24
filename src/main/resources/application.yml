@@ -1,0 +1,41 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: block-service
+          uri: lb://BLOCK-SERVICE
+          predicates:
+            - Path=/block-service/**
+        - id: purchase-service
+          uri: lb://PURCHASE-SERVICE
+          predicates:
+            - Path=/purchase-service/**
+        - id: member-service
+          uri: lb://MEMBER-SERVICE
+          predicates:
+            - Path=/member-service/**
+        - id: game-service
+          uri: lb://GAME-SERVICE
+          predicates:
+            - Path=/game-service/**
+        - id: webtoon-service
+          uri: lb://WEBTOON-SERVICE
+          predicates:
+            - Path=/webtoon-service/**
+        - id: comment-service
+          uri: lb://COMMENT-SERVICE
+          predicates:
+            - Path=/comment-service/**
