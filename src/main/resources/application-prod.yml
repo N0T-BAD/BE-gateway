@@ -14,6 +14,10 @@ spring:
 
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 50000
+        response-timeout: 50000
+        
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       globalcors:
