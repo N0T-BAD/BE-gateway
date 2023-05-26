@@ -19,7 +19,10 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: 'https://blockpage-eta.vercel.app/'
+            allowedOrigins: 
+              - 'https://blockpage-eta.vercel.app/'
+              - 'http://localhost:3000'
+              - 'http://localhost:3001'
             allow-credentials: true
             allowedHeaders: '*'
             allowedMethods:
