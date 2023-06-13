@@ -25,6 +25,7 @@ spring:
           '[/**]':
             allowedOrigins: 
               - 'https://blockpage-eta.vercel.app/'
+              - 'https://blockpage-admin.vercel.app/'
               - 'http://localhost:3000'
               - 'http://localhost:3001'
             allow-credentials: true
